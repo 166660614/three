@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Cart;
 
 use Illuminate\Http\Request;
 use App\Model\CartModel;
+use App\Model\GoodsModel;
 use App\Http\Controllers\Controller;
 
 class CartController extends Controller
@@ -14,7 +15,7 @@ class CartController extends Controller
             'user_id'=>$user_id,
             'is_delete'=>1
         ];
-        $cart_data=CartModel::where($cart_where)->get();
+        $cart_data=CartModel::join('api_goods','api_goods.goods_id','=','api_cart.goods_id')->where($cart_where)->get();
         if($cart_data){
             $data=[
                 'errcode'=>'4001',
