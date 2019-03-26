@@ -37,6 +37,7 @@ class UserController extends Controller{
                 'errmsg'=>'登陆成功',
                 'token'=>$token,
                 'user_id'=>$user_data['user_id'],
+                'user_name'=>$user_data['user_name'],
             ];
             return $res_data;
         }else{
