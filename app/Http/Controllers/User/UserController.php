@@ -13,7 +13,8 @@ class UserController extends Controller{
                 'errmsg'=>'账号不能为空'
             ];
             return $res_data;
-        }else{
+        }
+        if(empty($user_pwd)){
             $res_data=[
                 'errcode'=>'5010',
                 'errmsg'=>'密码不能为空'
