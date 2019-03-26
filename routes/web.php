@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/goods/list','Goods\GoodsController@goods');   //
-Route::post('/goods/details','Goods\GoodsController@details');   //
+Route::post('/goods/list','Goods\GoodsController@goods');   //商品数据接口
+Route::post('/goods/details','Goods\GoodsController@details');   //商品详情数据接口
 
-Route::post('/user/login','User\UserController@login');
+Route::post('/user/login','User\UserController@login');//用户登录接口
+Route::post('/user/cart','Cart\CartController@cartShow');//购物车数据接口
