@@ -15,7 +15,7 @@ class CartController extends Controller
             'is_delete'=>1
         ];
         $cart_data=CartModel::where($cart_where)->get();
-        if(!$cart_data){
+        if($cart_data){
             $data=[
                 'errcode'=>'4001',
                 'errmsg'=>$cart_data,
