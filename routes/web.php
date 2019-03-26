@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::post('/goods/list','Goods\GoodsController@goods');   //
 Route::post('/goods/details','Goods\GoodsController@details');   //
 
+Route::post('/user/login','User\UserController@login');
