@@ -11,7 +11,7 @@ class CartController extends Controller
     public function cartShow(){
         $user_id=$_POST['user_id'];
         $cart_where=[
-            '$user_id'=>$user_id,
+            'user_id'=>$user_id,
             'is_delete'=>1
         ];
         $cart_data=CartModel::where($cart_where)->get();
