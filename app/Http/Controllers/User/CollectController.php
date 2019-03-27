@@ -12,7 +12,7 @@ class CollectController extends Controller
         $timestamps=$_POST['timestamps'];
         $user_id=$_POST['user_id'];
         $coll_key='collecion:redis:';
-        $res=Redis::zAdd($coll_key,$timestamps,$user_id);
+        $res=Redis::zIncrBy($coll_key,$timestamps,$user_id);
         if($res){
             $data=[
                 'errcode'=>4001,
