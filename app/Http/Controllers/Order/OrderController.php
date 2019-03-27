@@ -12,7 +12,7 @@ class OrderController extends Controller
         $user_id=$_POST['user_id'];
         $goods_id=$_POST['goods_id'];
         $cart_id=$_POST['cart_id'];
-        $order_num=time().random_int(5);
+        $order_num='three'.time();
         $order_data=[
             'order_num'=>$order_num,
             'goods_id'=>$goods_id,
