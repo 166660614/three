@@ -48,4 +48,27 @@ class UserController extends Controller{
             return $res_data;
         }
     }
+    public function uregister(){
+        $uname=$_POST['uname'];
+        $upwd=$_POST['upwd'];
+        $uemail=$_POST['uemail'];
+        $info=[
+            'user_name'=>$uname,
+            'user_pwd'=>$upwd,
+            'user_email'=>$uemail
+        ];
+        $res=UserModel::insert($info);
+        if($res){
+            $data=[
+                'errcode'=>'4001',
+                'errmsg'=>'注册成功'
+            ];
+        }else{
+            $data=[
+                'errcode'=>'5001',
+                'errmsg'=>'注册失败'
+            ];
+        }
+        return $data;
+    }
 }
