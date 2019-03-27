@@ -11,7 +11,10 @@ class GoodsController extends Controller
     //
     public function goods(){
         $data=GoodsModel::get();
-        return $data;
+        $arr=[
+            'data'=>$data
+        ];
+        return json_decode($data,true);
     }
     public function details(Request $request){
         $goods_id=$request->input('goods_id');
