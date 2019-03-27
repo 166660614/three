@@ -48,7 +48,7 @@ class UserController extends Controller{
             return $res_data;
         }
     }
-    public function uregister(){
+    public function register(){
         $uname=$_POST['uname'];
         $upwd=$_POST['upwd'];
         $uemail=$_POST['uemail'];
