@@ -20,3 +20,4 @@ Route::post('/goods/details','Goods\GoodsController@details');   //商品详情�
 
 Route::post('/user/login','User\UserController@login');//用户登录接口
 Route::post('/user/cart','Cart\CartController@cartShow');//购物车数据接口
+Route::post('/cart/join','Cart\CartController@cartJoin');//购物车数据接口
