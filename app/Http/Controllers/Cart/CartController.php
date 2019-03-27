@@ -21,7 +21,7 @@ class CartController extends Controller
                 'errcode'=>'4001',
                 'errmsg'=>$cart_data,
             ];
-            echo json_encode($data);
+            echo json_decode($data);
         }
     }
 }
