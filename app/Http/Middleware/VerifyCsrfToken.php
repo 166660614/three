@@ -21,10 +21,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/goods/*',
         '/user/*',
-<<<<<<< HEAD
-        'cart/*'
-=======
-        '/collect/*'
->>>>>>> 0c0006d23bab6999a8a22957c043454084967493
+        'cart/*',
+        '/collect/*',
     ];
 }
