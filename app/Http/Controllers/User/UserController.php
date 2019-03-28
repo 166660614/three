@@ -29,7 +29,7 @@ class UserController extends Controller{
         $user_data=UserModel::where($user_where)->first();
         $ktoken='token:u:'.$user_data['user_id'];
         $token=$token=str_random(32);
-        $htoken=Redis::hSet($ktoken,'app:token',$token);
+        Redis::hSet($ktoken,'app:token',$token);
         Redis::expire($ktoken,60*5);
         if($user_data){
             $res_data=[
