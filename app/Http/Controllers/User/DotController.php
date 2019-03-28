@@ -17,12 +17,12 @@ class DotController extends Controller
         if($res){
             $data=[
                 'errcode'=>0,
-                'errmsg'=>'点赞成功'
+                'msg'=>'点赞成功'
             ];
         }else{
             $data=[
                 'errcode'=>5001,
-                'errmsg'=>'您已经赞过了'
+                'msg'=>'您已经赞过了'
             ];
         }
         return $data;
