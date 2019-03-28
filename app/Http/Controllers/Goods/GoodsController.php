@@ -42,4 +42,15 @@ class GoodsController extends Controller
         }
         return $response;
     }
+    public function salevalue(){
+        $goods_id=$_POST['goods_id'];
+        $salekey='sale:value:goods:'.$goods_id;
+        $salevalue=Redis::zincrby($salekey,1,$goods_id);//每点击商品一下增加访问量1次
+        $salenum=Redis::zscore($salekey,$goods_id);
+        $data=[
+            'errcode'=>0,
+            'msg'=>$salenum,
+        ];
+        return $data;
+    }
 }
