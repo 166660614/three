@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
+use App\Model\GoodsModel;
 
 class CollectController extends Controller
 {
@@ -50,12 +51,26 @@ class CollectController extends Controller
                 'errcode'=>4002,
                 'errmsg'=>'你还没有收藏'
             ];
+            return $data;
         }else{
+            $arr=[];
+            foreach ($res as $k=>$v){
+                //echo $k;
+                $res1=GoodsModel::where(['goods_id'=>$k])->first();
+                if(empty($res1)){
+                    $data=[
+                        'errcode'=>4002,
+                        'errmsg'=>'商品已不存在'
+                    ];
+                    return $data;
+                }
+                $arr[]=$res1;
+            }
             $data=[
                 'errcode'=>0,
-                'errmsg'=>$res
+                'errmsg'=>$arr
             ];
+            return $data;
         }
-        return $data;
     }
 }
