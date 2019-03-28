@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class GoodsModel extends Model
 {
     public $table='api_goods';    //表名
-    public $timestamps = true;  //开启自动写入时间
-    public $updated_at=false;   //关闭自动修改时间
+    public $timestamps = false;  //开启自动写入时间
+    //public $updated_at=false;   //关闭自动修改时间
     public $primaryKey = 'goods_id'; //数据库主键
     //展示价格以元为单位
     public function getPriceAttribute($price){
