@@ -40,7 +40,7 @@ class CollectController extends Controller
         $res=Redis::zRange($coll_key,0,1,true);
         if(empty($res)){
             $data=[
-                'errcode'=>4001,
+                'errcode'=>4002,
                 'errmsg'=>'你还没有收藏'
             ];
         }else{
