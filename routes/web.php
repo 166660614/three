@@ -17,8 +17,8 @@ Route::get('/', function () {
 
 Route::post('/goods/list','Goods\GoodsController@goods');   //商品数据接口
 Route::post('/goods/details','Goods\GoodsController@details');   //商品详情数据接口
-Route::post('/goods/salenum','Goods\GoodsController@salevalue');   //访问量数据接口
-
+Route::post('/goods/salenum','Goods\GoodsController@salevalue');   //添加访问量数据接口
+Route::post('/goods/getsal','Goods\GoodsController@getsal');   //访问量数据接口
 Route::post('/user/login','User\UserController@login');//用户登录接口
 Route::post('/user/register','User\UserController@register');//用户注册接口
 Route::post('/user/center','User\UserController@center');//个人中心判断是否登录接口
