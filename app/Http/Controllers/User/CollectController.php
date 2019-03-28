@@ -44,7 +44,7 @@ class CollectController extends Controller
             ];
             return $data;
         }
-        $coll_key='test:'.$user_id;
+        $coll_key='collecion:user:'.$user_id;
         $res=Redis::zRange($coll_key,0,1,true);
         if(empty($res)){
             $data=[
@@ -64,9 +64,7 @@ class CollectController extends Controller
                     ];
                     return $data;
                 }
-                //var_dump($res1);
                 $arr[]=$res1;
-                //var_dump($arr);
             }
             $data=[
                 'errcode'=>0,
@@ -74,6 +72,5 @@ class CollectController extends Controller
             ];
             return $data;
         }
-        //return $data;
     }
 }
