@@ -20,6 +20,7 @@ class OrderController extends Controller
         }
         $goods_id=$_POST['goods_id'];
         $cart_id=$_POST['cart_id'];
+        $goods_num=$_POST['goods_num'];
         $order_num='three'.time();
         $order_data=[
             'order_num'=>$order_num,
@@ -32,14 +33,16 @@ class OrderController extends Controller
                 'cart_id'=>$cart_id
             ];
             CartModel::where($cart_where)->update(['is_delete'=>2]);
+            $goods_store=GoodsModel::where(['goods_id'=>$goods_id])->value('goods_store');//查询商品库存
+            GoodsModel::where(['goods_id'=>$goods_id])->update(['goods_store'=>$goods_store-$goods_num]);//下单减库存
             $res_data=[
                 'errcode'=>0,
-                'errmsg'=>'ok'
+                'errmsg'=>'下单成功'
             ];
         }else{
             $res_data=[
                 'errcode'=>5001,
-                'msg'=>'no'
+                'msg'=>'下单失败'
             ];
         }
         return $res_data;
