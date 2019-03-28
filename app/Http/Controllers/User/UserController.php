@@ -79,7 +79,8 @@ class UserController extends Controller{
         $info=[
             'user_name'=>$uname,
             'user_pwd'=>$upwd,
-            'user_email'=>$uemail
+            'user_account'=>$uname,
+            'user_email'=>$uemail,
         ];
         $res=UserModel::insert($info);
         if($res){
