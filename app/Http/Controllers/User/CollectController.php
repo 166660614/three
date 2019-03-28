@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
+use App\Model\GoodsModel;
 
 class CollectController extends Controller
 {
@@ -43,19 +44,36 @@ class CollectController extends Controller
             ];
             return $data;
         }
-        $coll_key='collecion:user:'.$user_id;
+        $coll_key='test:'.$user_id;
         $res=Redis::zRange($coll_key,0,1,true);
         if(empty($res)){
             $data=[
                 'errcode'=>4002,
                 'errmsg'=>'你还没有收藏'
             ];
+            return $data;
         }else{
+            $arr=[];
+            foreach ($res as $k=>$v){
+                //echo $k;
+                $res1=GoodsModel::where(['goods_id'=>$k])->first();
+                if(empty($res1)){
+                    $data=[
+                        'errcode'=>4002,
+                        'errmsg'=>'商品已不存在'
+                    ];
+                    return $data;
+                }
+                //var_dump($res1);
+                $arr[]=$res1;
+                //var_dump($arr);
+            }
             $data=[
                 'errcode'=>0,
-                'errmsg'=>$res
+                'errmsg'=>$arr
             ];
+            return $data;
         }
-        return $data;
+        //return $data;
     }
 }
