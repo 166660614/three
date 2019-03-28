@@ -33,25 +33,49 @@ class UserController extends Controller{
         Redis::expire($ktoken,60*5);
         if($user_data){
             $res_data=[
-                'errcode'=>'4001',
-                'errmsg'=>'登陆成功',
+                'errcode'=>0,
+                'msg'=>'登陆成功',
                 'token'=>$token,
                 'user_id'=>$user_data['user_id'],
                 'user_name'=>$user_data['user_name'],
             ];
-            return $res_data;
         }else{
             $res_data=[
                 'errcode'=>'5011',
-                'errmsg'=>'账号或者密码错误'
+                'msg'=>'账号或者密码错误'
             ];
-            return $res_data;
         }
+        return $res_data;
     }
     public function register(){
         $uname=$_POST['uname'];
+        if(empty($uname)){
+            $data=[
+                'errcode'=>6001,
+                'msg'=>'用户名不能为空'
+            ];
+        }
         $upwd=$_POST['upwd'];
+        if(empty($upwd)){
+            $data=[
+                'errcode'=>6001,
+                'msg'=>'密码不能为空'
+            ];
+        }
+        $upwd2=$_POST['upwd2'];
+        if($upwd2!=$upwd){
+            $data=[
+                'errcode'=>6001,
+                'msg'=>'密码和确认密码不一致'
+            ];
+        }
         $uemail=$_POST['uemail'];
+        if(empty($uemail)){
+            $data=[
+                'errcode'=>6001,
+                'msg'=>'邮箱不能为空'
+            ];
+        }
         $info=[
             'user_name'=>$uname,
             'user_pwd'=>$upwd,
@@ -60,13 +84,13 @@ class UserController extends Controller{
         $res=UserModel::insert($info);
         if($res){
             $data=[
-                'errcode'=>'4001',
-                'errmsg'=>'注册成功'
+                'errcode'=>0,
+                'msg'=>'注册成功'
             ];
         }else{
             $data=[
-                'errcode'=>'5001',
-                'errmsg'=>'注册失败'
+                'errcode'=>5001,
+                'msg'=>'注册失败'
             ];
         }
         return $data;
@@ -79,14 +103,14 @@ class UserController extends Controller{
         if($token==$redis_token){
             $user_info=UserModel::where(['user_id'=>$user_id])->first();
             $data=[
-                'errcode'=>'4001',
-                'errmsg'=>'ok',
+                'errcode'=>0,
+                'msg'=>'ok',
                 'user_name'=>$user_info['user_name'],
             ];
         }else{
             $data=[
-                'errcode'=>'5001',
-                'errmsg'=>'no'
+                'errcode'=>5001,
+                'msg'=>'no'
             ];
         }
         return $data;
