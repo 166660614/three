@@ -54,24 +54,20 @@ class CollectController extends Controller
             return $data;
         }else{
             $arr=[];
-            foreach ($res as $k=>$v){
+            foreach ($res as $k=>$v) {
                 //echo $k;
-                $res1=GoodsModel::where(['goods_id'=>$k])->first();
-                $res1['add_time']=$v;
-                if(empty($res1)){
-                    $data=[
-                        'errcode'=>4002,
-                        'msg'=>'商品已不存在'
+                $res1 = GoodsModel::where(['goods_id' => $k])->first();
+                $res1['add_time'] = $v;
+                if (empty($res1)) {
+                    $data = [
+                        'errcode' => 4002,
+                        'msg' => '商品已不存在'
                     ];
                     return $data;
                 }
-                $arr[]=$res1;
+                $arr[] = $res1;
             }
-            $data=[
-                'errcode'=>0,
-                'msg'=>$arr
-            ];
-            return $data;
+            return $arr;
         }
     }
 }
