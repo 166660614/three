@@ -11,6 +11,13 @@ class CartController extends Controller
 {
     public function cartShow(){
         $user_id=$_POST['user_id'];
+        if(empty($user_id)){
+            $data=[
+                'errcode'=>4001,
+                'msg'=>'请先登录'
+            ];
+            return $data;
+        }
         $cart_where=[
             'user_id'=>$user_id,
             'is_delete'=>1
@@ -22,6 +29,13 @@ class CartController extends Controller
         $goods_id=$request->input('goods_id');
         $goods_num=$request->input('goods_num');
         $user_id=$request->input('user_id');
+        if(empty($user_id)){
+            $data=[
+                'errcode'=>4001,
+                'msg'=>'请先登录'
+            ];
+            return $data;
+        }
         //echo $goods_id;
         $where=[
             'goods_id'=>$goods_id,
@@ -30,7 +44,7 @@ class CartController extends Controller
         $store=GoodsModel::where(['goods_id'=>$goods_id])->value('goods_store');
         if($goods_num>$store){
             $response=[
-                'error'=>50001,
+                'error'=>5001,
                 'msg'=>'库存不足'
             ];
             return $response;
@@ -53,7 +67,7 @@ class CartController extends Controller
                 return $response;
             }else{
                 $response=[
-                    'error'=>50001,
+                    'error'=>5001,
                     'msg'=>'添加失败'
                 ];
                 return $response;
@@ -82,7 +96,7 @@ class CartController extends Controller
                     return $response;
                 }else{
                     $response=[
-                        'error'=>50001,
+                        'error'=>5001,
                         'msg'=>'添加失败'
                     ];
                     return $response;
