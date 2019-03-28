@@ -23,6 +23,7 @@ Route::post('/user/register','User\UserController@register');//用户注册接�
 Route::post('/user/center','User\UserController@center');//个人中心判断是否登录接口
 Route::post('/user/cart','Cart\CartController@cartShow');//购物车数据接口
 Route::post('/user/dot','User\DotController@dot');//点赞数据接口
+Route::post('/user/give','User\DotController@give');//点赞展示数据接口
 Route::post('/cart/join','Cart\CartController@cartJoin');//添加到购物车
 
 
