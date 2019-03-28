@@ -25,12 +25,12 @@ class CollectController extends Controller
         if($res){
             $data=[
                 'errcode'=>0,
-                'errmsg'=>'收藏成功'
+                'msg'=>'收藏成功'
             ];
         }else{
             $data=[
                 'errcode'=>5001,
-                'errmsg'=>'您已经收藏过了'
+                'msg'=>'您已经收藏过了'
             ];
         }
         return $data;
@@ -40,16 +40,16 @@ class CollectController extends Controller
         if(empty($user_id)){
             $data=[
                 'errcode'=>4001,
-                'errmsg'=>'请先登录'
+                'msg'=>'请先登录'
             ];
             return $data;
         }
         $coll_key='collecion:user:'.$user_id;
-        $res=Redis::zRange($coll_key,0,1,true);
+        $res=Redis::zRange($coll_key,0,-1,true);
         if(empty($res)){
             $data=[
                 'errcode'=>4002,
-                'errmsg'=>'你还没有收藏'
+                'msg'=>'你还没有收藏'
             ];
             return $data;
         }else{
@@ -57,10 +57,11 @@ class CollectController extends Controller
             foreach ($res as $k=>$v){
                 //echo $k;
                 $res1=GoodsModel::where(['goods_id'=>$k])->first();
+                $res1['add_time']=$v;
                 if(empty($res1)){
                     $data=[
                         'errcode'=>4002,
-                        'errmsg'=>'商品已不存在'
+                        'msg'=>'商品已不存在'
                     ];
                     return $data;
                 }
@@ -68,7 +69,7 @@ class CollectController extends Controller
             }
             $data=[
                 'errcode'=>0,
-                'errmsg'=>$arr
+                'msg'=>$arr
             ];
             return $data;
         }
