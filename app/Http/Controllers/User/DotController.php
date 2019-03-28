@@ -12,6 +12,12 @@ class DotController extends Controller
     public function dot(){
         $timestamps=$_POST['timestamps'];
         $user_id=$_POST['user_id'];
+        if(empty($user_id)){
+            $data=[
+                'errcode'=>4001,
+                'msg'=>'请先登录'
+            ];
+        }
         $goods_id=$_POST['goods_id'];
         $coll_key='dot:user:'.$user_id;
         $res=Redis::zAdd($coll_key,$timestamps,$goods_id);
