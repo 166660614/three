@@ -26,3 +26,4 @@ Route::post('/cart/join','Cart\CartController@cartJoin');//添加到购物车
 
 Route::post('/collect/add','User\CollectController@collectAdd');//收藏商品数据接口
 Route::post('/order/add','Order\OrderController@createOrder');//生成(添加)订单数据接口
+Route::post('/user/dot','User\DotController@dot');//点赞数据接口
