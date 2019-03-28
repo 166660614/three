@@ -18,6 +18,8 @@ class GoodsController extends Controller
     }
     public function details(Request $request){
         $goods_id=$request->input('goods_id');
+        $salekey='sale:value:goods:'.$goods_id;
+        $salenum=Redis::zscore($salekey,$goods_id);
         if(empty($goods_id || $goods_id<=0)){
             $response=[
                 'error'=>4001,
@@ -36,7 +38,8 @@ class GoodsController extends Controller
             }else{
                 $response=[
                     'error'=>0,
-                    'msg'=>$res
+                    'msg'=>$res,
+                    'salenum'=>$salenum,
                 ];
             }
         }
@@ -53,13 +56,6 @@ class GoodsController extends Controller
         return $data;
     }
     public function getsal(){
-        $goods_id=$_POST['goods_id'];
-        $salekey='sale:value:goods:'.$goods_id;
-        $salenum=Redis::zscore($salekey,$goods_id);
-        $data=[
-            'errcode'=>0,
-            'msg'=>$salenum,
-        ];
-        return $data;
+
     }
 }
