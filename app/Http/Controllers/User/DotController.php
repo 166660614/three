@@ -16,7 +16,7 @@ class DotController extends Controller
         $res=Redis::zAdd($coll_key,$timestamps,$goods_id);
         if($res){
             $data=[
-                'errcode'=>4001,
+                'errcode'=>0,
                 'errmsg'=>'点赞成功'
             ];
         }else{
