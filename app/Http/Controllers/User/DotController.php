@@ -17,6 +17,7 @@ class DotController extends Controller
                 'errcode'=>4001,
                 'msg'=>'请先登录'
             ];
+            return $data;
         }
         $goods_id=$_POST['goods_id'];
         $coll_key='dot:user:'.$user_id;
