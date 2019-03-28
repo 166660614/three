@@ -54,6 +54,15 @@ class UserController extends Controller{
                 'errcode'=>6001,
                 'msg'=>'用户名不能为空'
             ];
+            return $data;
+        }
+        $res_info=UserModel::where(['user_name'=>$uname])->first();
+        if($res_info){
+            $data=[
+                'errcode'=>6001,
+                'msg'=>'客观，您输入的账号已被注册！换一个呗。'
+            ];
+            return $data;
         }
         $upwd=$_POST['upwd'];
         if(empty($upwd)){
@@ -61,6 +70,7 @@ class UserController extends Controller{
                 'errcode'=>6001,
                 'msg'=>'密码不能为空'
             ];
+            return $data;
         }
         $upwd2=$_POST['upwd2'];
         if($upwd2!=$upwd){
@@ -68,6 +78,7 @@ class UserController extends Controller{
                 'errcode'=>6001,
                 'msg'=>'密码和确认密码不一致'
             ];
+            return $data;
         }
         $uemail=$_POST['uemail'];
         if(empty($uemail)){
@@ -75,6 +86,7 @@ class UserController extends Controller{
                 'errcode'=>6001,
                 'msg'=>'邮箱不能为空'
             ];
+            return $data;
         }
         $info=[
             'user_name'=>$uname,
