@@ -11,8 +11,9 @@ class DotController extends Controller
     public function dot(){
         $timestamps=$_POST['timestamps'];
         $user_id=$_POST['user_id'];
+        $goods_id=$_POST['goods_id'];
         $coll_key='dot:user:'.$user_id;
-        $res=Redis::zAdd($coll_key,$timestamps);
+        $res=Redis::zAdd($coll_key,$timestamps,$goods_id);
         if($res){
             $data=[
                 'errcode'=>4001,
