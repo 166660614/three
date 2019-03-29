@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\User;
+use function GuzzleHttp\Psr7\str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
@@ -22,10 +23,23 @@ class UserController extends Controller{
             ];
             return $res_data;
         }
-        $user_where=[
-            'user_account'=>$user_account,
-            'user_pwd'=>$user_pwd
-        ];
+        if(is_numeric($user_account) && substr($user_account)==11){
+            $user_where=[
+                'user_tel'=>$user_account,
+                'user_pwd'=>$user_pwd
+            ];
+        }elseif(substr_count($user_account,'@')!=0){
+            $user_where=[
+                'user_tel'=>$user_account,
+                'user_pwd'=>$user_pwd
+            ];
+        }else{
+            $user_where=[
+                'user_name'=>$user_account,
+                'user_pwd'=>$user_pwd
+            ];
+        }
+
         $user_data=UserModel::where($user_where)->first();
         $ktoken='token:u:'.$user_data['user_id'];
         $token=$token=str_random(32);
@@ -53,6 +67,12 @@ class UserController extends Controller{
             $data=[
                 'errcode'=>6001,
                 'msg'=>'用户名不能为空'
+            ];
+            return $data;
+        }elseif (strlen($uname)>10){
+            $data=[
+                'errcode'=>6001,
+                'msg'=>'用户名最多10位'
             ];
             return $data;
         }
@@ -85,6 +105,26 @@ class UserController extends Controller{
             $data=[
                 'errcode'=>6001,
                 'msg'=>'邮箱不能为空'
+            ];
+            return $data;
+        }elseif(substr_count($uemail,'@')==0){
+            $data=[
+                'errcode'=>6002,
+                'msg'=>'邮箱格式不符合'
+            ];
+            return $data;
+        }
+        $utel=$_POST['utel'];
+        if(empty($utel)){
+            $data=[
+                'errcode'=>6001,
+                'msg'=>'手机号不能为空'
+            ];
+            return $data;
+        }elseif(!is_numeric($utel) && strlen($utel)!=11){
+            $data=[
+                'errcode'=>6001,
+                'msg'=>'手机号格式不符合'
             ];
             return $data;
         }
