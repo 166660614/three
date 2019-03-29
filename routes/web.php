@@ -36,3 +36,6 @@ Route::post('/order/add','Order\OrderController@createOrder');//生成(添加)�
 Route::post('/order/show','Order\OrderController@orderShow');//订单数据接口
 
 Route::post('/friend/add','User\FriendController@friendAdd');//添加好友接口
+
+Route::post('/user/friends','User\FriendController@addfriend');//好友数据接口
+
