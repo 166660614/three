@@ -12,9 +12,10 @@ class FriendController extends Controller
         $user_id=$_POST['user_id'];
         $friend_id=$_POST['friend_id'];
         $user_name=$_POST['user_name'];
+        $friend_account=$_POST['friend_account'];
         $data_friend=[
-            'friend_id'=>$friend_id,
             'friend_name'=>$user_name,
+            'friend_account'=>$friend_account,
         ];
         $res_friend=FriendModel::insert($data_friend);//好友列表添加
         $data_user_friend=[
