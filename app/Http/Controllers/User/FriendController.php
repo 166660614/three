@@ -19,7 +19,7 @@ class FriendController extends Controller
         $res_friend=FriendModel::insert($data_friend);//好友列表添加
         $data_user_friend=[
             'user_id'=>$user_id,
-            'friend_id'=>$user_id,
+            'friend_id'=>$friend_id,
         ];
         UserFriendModel::insert($data_user_friend);//当前用户添加好友
         $data_friend_user=[
