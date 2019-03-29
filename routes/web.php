@@ -34,9 +34,8 @@ Route::post('/collect/add','User\CollectController@collectAdd');//收藏商品�
 Route::post('/collect/zrange','User\CollectController@collectZrange');//商品收藏展示页面接口
 Route::post('/order/add','Order\OrderController@createOrder');//生成(添加)订单数据接口
 Route::post('/order/show','Order\OrderController@orderShow');//订单数据接口
-<<<<<<< HEAD
 
 Route::post('/friend/add','User\FriendController@friendAdd');//添加好友接口
-=======
-Route::post('/user/friends','User\FriendController@addfriend');//添加好友数据接口
->>>>>>> ily
+
+Route::post('/user/friends','User\FriendController@addfriend');//好友数据接口
+
