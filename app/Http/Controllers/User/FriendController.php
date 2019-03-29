@@ -45,12 +45,18 @@ class FriendController extends Controller
         $user_id=$_POST['user_id'];
         if(empty($user_id)){
             $data=[
-                'errcode'=>0,
-                'msg'=>'添加成功'
+                'errcode'=>4001,
+                'msg'=>'您还没登录'
             ];
             return $data;
         }
         $user_data=UserModel::where(['user_id'=>$user_id])->get();
-        return $user_data;
+        if($user_data){
+            $data=[
+                'errcode'=>0,
+                'msg'=>$user_data,
+            ];
+            return $data;
+        }
     }
 }

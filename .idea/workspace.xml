@@ -145,12 +145,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="332" />
+          <entry key="php" value="381" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="332" />
+          <entry key="PHP" value="381" />
         </counts>
       </usages-collector>
     </session>
@@ -199,9 +199,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/FriendController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="348">
               <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
 >>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
+=======
+            <state relative-caret-position="462">
+              <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+>>>>>>> 551e67f503454c27027d41b746109297427086e9
               <folding>
                 <element signature="e#45#73#0#PHP" expanded="true" />
               </folding>
@@ -439,19 +444,27 @@
       <workItem from="1553647081935" duration="10034000" />
       <workItem from="1553733997968" duration="12367000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1553821256464" duration="8721000" />
 =======
       <workItem from="1553826668620" duration="6867000" />
 >>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
+=======
+      <workItem from="1553826668620" duration="7378000" />
+>>>>>>> 551e67f503454c27027d41b746109297427086e9
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="36762000" />
 =======
     <option name="totallyTimeSpent" value="34908000" />
 >>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
+=======
+    <option name="totallyTimeSpent" value="35419000" />
+>>>>>>> 551e67f503454c27027d41b746109297427086e9
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -612,9 +625,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/FriendController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="348">
           <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
 >>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
+=======
+        <state relative-caret-position="462">
+          <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+>>>>>>> 551e67f503454c27027d41b746109297427086e9
           <folding>
             <element signature="e#45#73#0#PHP" expanded="true" />
           </folding>
