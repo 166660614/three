@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\FriendModel;
+use App\Model\UserFriendModel;
 class FriendController extends Controller
 {
     public function friendAdd(){
