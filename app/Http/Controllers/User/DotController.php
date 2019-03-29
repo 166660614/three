@@ -90,7 +90,7 @@ class DotController extends Controller
 //        }
 //        print_r($friend);
 
-        $data=FriendModel::whereIn('friend_id',$friend_id)->get()->toArray();
+        $data=FriendModel::whereIn('friend_id',$friend_id)->get();
        // print_r($data);
         return $data;
 }
