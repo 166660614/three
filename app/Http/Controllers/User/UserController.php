@@ -149,7 +149,7 @@ class UserController extends Controller{
         $pwd2=$_POST['upwd2'];
         $user_id=$_POST['user_id'];
         $userinfo=UserModel::where(['user_id'=>$user_id])->first();
-        $upwd=$user_id['user_pwd'];
+        $upwd=$userinfo['user_pwd'];
         if($upwd==$pwd){
             $data=[
                 'errcode' => 50001,
