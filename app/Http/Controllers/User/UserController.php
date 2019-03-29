@@ -131,7 +131,7 @@ class UserController extends Controller{
         $info=[
             'user_name'=>$uname,
             'user_pwd'=>$upwd,
-            'user_account'=>$uname,
+            'user_tel'=>$utel,
             'user_email'=>$uemail,
         ];
         $res=UserModel::insert($info);
