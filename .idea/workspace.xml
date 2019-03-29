@@ -169,11 +169,19 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="GoodsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Goods/GoodsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="70" column="49" lean-forward="true" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
+=======
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2774">
               <caret line="170" column="9" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
+>>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
               <folding>
                 <element signature="e#43#71#0#PHP" expanded="true" />
               </folding>
@@ -181,11 +189,24 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="DotController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/DotController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+=======
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/FriendController.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="348">
+              <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+>>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
+=======
             <state relative-caret-position="462">
               <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+>>>>>>> 551e67f503454c27027d41b746109297427086e9
               <folding>
                 <element signature="e#45#73#0#PHP" expanded="true" />
               </folding>
@@ -202,6 +223,13 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+=======
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cart/CartController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -210,6 +238,7 @@
               <folding>
                 <element signature="e#45#73#0#PHP" expanded="true" />
               </folding>
+>>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
             </state>
           </provider>
         </entry>
@@ -238,7 +267,13 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/DotController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/app/Model/UserModel.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Goods/GoodsController.php" />
+=======
         <option value="$PROJECT_DIR$/app/Http/Controllers/User/FriendController.php" />
+>>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
       </list>
     </option>
   </component>
@@ -334,11 +369,19 @@
       <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
     </include_path>
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-38" />
+    <option name="y" value="42" />
+    <option name="width" value="1297" />
+    <option name="height" value="735" />
+=======
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+>>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -400,12 +443,36 @@
       <workItem from="1553587571830" duration="5640000" />
       <workItem from="1553647081935" duration="10034000" />
       <workItem from="1553733997968" duration="12367000" />
+<<<<<<< HEAD
       <workItem from="1553826668620" duration="7666000" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <workItem from="1553821256464" duration="8721000" />
+=======
+      <workItem from="1553826668620" duration="6867000" />
+>>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
+=======
+      <workItem from="1553826668620" duration="7378000" />
+>>>>>>> 551e67f503454c27027d41b746109297427086e9
+>>>>>>> 1510c804b828892136f220e39d3397c264f46376
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="35707000" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="36762000" />
+=======
+    <option name="totallyTimeSpent" value="34908000" />
+>>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
+=======
+    <option name="totallyTimeSpent" value="35419000" />
+>>>>>>> 551e67f503454c27027d41b746109297427086e9
+>>>>>>> 1510c804b828892136f220e39d3397c264f46376
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
@@ -513,6 +580,40 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="14" lean-forward="true" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/UserModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="29" lean-forward="true" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="22" column="72" selection-start-line="22" selection-start-column="72" selection-end-line="22" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/DotController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="68" column="13" lean-forward="true" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="13" />
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Goods/GoodsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-640">
@@ -532,13 +633,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/FriendController.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="348">
+          <caret line="48" column="23" lean-forward="true" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+>>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
+=======
         <state relative-caret-position="462">
           <caret line="58" column="25" lean-forward="true" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+>>>>>>> 551e67f503454c27027d41b746109297427086e9
           <folding>
             <element signature="e#45#73#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Goods/GoodsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="70" column="49" lean-forward="true" selection-start-line="70" selection-start-column="49" selection-end-line="70" selection-end-column="49" />
+          <folding>
+            <element signature="e#46#74#0#PHP" expanded="true" />
+            <element signature="e#230#385#0#PHP" />
+            <element signature="e#761#814#0#PHP" />
+            <element signature="e#881#1194#0#PHP" />
+            <element signature="e#1241#1534#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 3a5a3f96395b057adf4051f528b767cb318a55b1
   </component>
 </project>
