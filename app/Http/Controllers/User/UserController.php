@@ -150,7 +150,7 @@ class UserController extends Controller{
         $user_id=$_POST['user_id'];
         $userinfo=UserModel::where(['user_id'=>$user_id])->first();
         $upwd=$userinfo['user_pwd'];
-        if($upwd==$pwd){
+        if($upwd!=$pwd){
             $data=[
                 'errcode' => 50001,
                 'msg'     => '原密码错误'
