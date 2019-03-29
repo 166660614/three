@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Redis;
 use App\Model\UserModel;
 class UserController extends Controller{
     public function login(){
-        $user_account=$_POST['user_name'];
+        $user_account=trim($_POST['user_name']);
         $user_pwd=$_POST['user_pwd'];
         if(empty($user_account)){
             $res_data=[
