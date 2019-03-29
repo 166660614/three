@@ -132,14 +132,13 @@ class UserController extends Controller{
     //修改密码
     public  function updatePwd(){
         $user_id=$_POST['user_id'];
-        if(!empty($user_id)){
-            $userinfo=UserModel::where(['user_id'=>$user_id])->first();
-            $uname=$userinfo['user_account'];
-            $data=[
+        if(!empty($user_id)) {
+            $userinfo = UserModel::where(['user_id' => $user_id])->first();
+            $uname = $userinfo['user_account'];
+            $data = [
                 'errcode' => 0,
-                'uname'   => $uname
+                'uname' => $uname
             ];
-            return $data;
         }
         $pwd1=$_POST['upwd1'];
         $pwd2=$_POST['upwd2'];
