@@ -144,9 +144,18 @@ class UserController extends Controller{
         }
     }
     public function pwd1(){
+        $pwd=$_POST['upwd'];
         $pwd1=$_POST['upwd1'];
         $pwd2=$_POST['upwd2'];
         $user_id=$_POST['user_id'];
+        $userinfo=UserModel::where(['user_id'=>$user_id])->first();
+        $upwd=$user_id['user_pwd'];
+        if($upwd==$pwd){
+            $data=[
+                'errcode' => 50001,
+                'msg'     => '原密码错误'
+            ]; 
+        }
         if($pwd1!=$pwd2){
             $data=[
                 'errcode' => 50001,
