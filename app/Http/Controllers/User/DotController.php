@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Model\FriendModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
 use App\Model\GoodsModel;
+use App\Model\UserFriendModel;
 
 class DotController extends Controller
 {
@@ -74,4 +76,22 @@ class DotController extends Controller
             return $data;
         }
     }
+    public function end(Request $request){
+        //print_r($_POST);
+        $user_id=$request->input('user_id');
+       // print_r($user_id);
+        $end_where=[
+          'user_id'=>$user_id,
+        ];
+        $friend_id=UserFriendModel::where($end_where)->pluck('friend_id')->toArray();
+    //  print_r($end_data);
+//        foreach ($end_data as $k=>$v) {
+//            $friend[] = $v['friend_id'];
+//        }
+//        print_r($friend);
+
+        $data=FriendModel::whereIn('friend_id',$friend_id)->get();
+       // print_r($data);
+        return $data;
+}
 }
