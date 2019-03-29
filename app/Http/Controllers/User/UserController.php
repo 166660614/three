@@ -128,4 +128,47 @@ class UserController extends Controller{
         }
         return $data;
     }
+
+    //修改密码
+    public  function updatePwd()
+    {
+        $user_id = $_POST['user_id'];
+        if (!empty($user_id)) {
+            $userinfo = UserModel::where(['user_id' => $user_id])->first();
+            $uname = $userinfo['user_account'];
+            $data = [
+                'errcode' => 0,
+                'uname' => $uname
+            ];
+            return $data;
+        }
+    }
+    public function pwd1(){
+        $pwd=$_POST['upwd'];
+        $pwd1=$_POST['upwd1'];
+        $pwd2=$_POST['upwd2'];
+        $user_id=$_POST['user_id'];
+        $userinfo=UserModel::where(['user_id'=>$user_id])->first();
+        $upwd=$userinfo['user_pwd'];
+        if($pwd!=$upwd){
+            $data=[
+                'errcode' => 50001,
+                'msg'     => '原密码错误'
+            ]; 
+        }else{
+            if($pwd1!=$pwd2){
+                $data=[
+                    'errcode' => 50001,
+                    'msg'     => '确认密码需和密码一致'
+                ];
+            }else{
+                UserModel::where(['user_id'=>$user_id])->update(['user_pwd'=>$pwd1]);
+                $data=[
+                    'errcode'=>0,
+                    'msg'=>'ok'
+                ];
+            }
+        }
+        return $data;
+    }
 }
