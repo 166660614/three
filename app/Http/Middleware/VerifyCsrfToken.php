@@ -24,6 +24,10 @@ class VerifyCsrfToken extends Middleware
         'cart/*',
         '/collect/*',
         '/order/*',
+<<<<<<< HEAD
         '/end/list',
+=======
+        '/friend/*',
+>>>>>>> 15da329cc8481d3ca24477e8671ffda33acc8d8b
     ];
 }

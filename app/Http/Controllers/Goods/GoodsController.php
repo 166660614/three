@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
 use App\Model\GoodsModel;
+use App\Model\UserModel;
 class GoodsController extends Controller
 {
     //
@@ -55,7 +56,36 @@ class GoodsController extends Controller
         ];
         return $data;
     }
-    public function getsal(){
-
+    public function people(Request $request){
+        $goods_id=$request->input('goods_id');
+        if(empty($goods_id)){
+            return [
+                'error'=>4003,
+                'msg'=>'非法操作'
+            ];
+        }
+        $user_id=$request->input('user_id');
+        if(!empty($user_id)){
+            $salekey='people:user:'.$goods_id;
+            Redis::zAdd($salekey,time(),$user_id);
+            $people=Redis::zRange($salekey,0,1);
+            //print_r($people);
+            $arr=[];
+            foreach ($people as $k=>$v){
+                $res=UserModel::where(['user_id'=>$v])->first();
+                if(empty($res)){
+                    $data=[
+                        'error'=>4002,
+                        'msg'=>'暂无人浏览'
+                    ];
+                    return $data;
+                }
+                $arr[]=$res;
+            }
+            return  [
+                'error'=>0,
+                'msg'=>$arr
+            ];
+        }
     }
 }
