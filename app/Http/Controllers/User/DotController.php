@@ -74,4 +74,10 @@ class DotController extends Controller
             return $data;
         }
     }
+    public function end(Request $request){
+        //print_r($_POST);
+        $user_id=$request->input('user_id');
+       // print_r($user_id);
+
+    }
 }
