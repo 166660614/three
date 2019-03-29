@@ -40,6 +40,7 @@ class FriendController extends Controller
                 'msg'=>'好友添加异常',
             ];
         }
+        return $data;
     }
     public function addfriend(Request $request){
         $user_id=$_POST['user_id'];
