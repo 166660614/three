@@ -82,7 +82,10 @@ class GoodsController extends Controller
                 }
                 $arr[]=$res;
             }
-            return $arr;
+            return  [
+                'error'=>0,
+                'msg'=>$arr
+            ];
         }
     }
 }
