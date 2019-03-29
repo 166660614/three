@@ -19,7 +19,7 @@ class FriendController extends Controller
             'friend_name'=>$user_name,
             'friend_account'=>$friend_account,
         ];
-        $pre_info=UserModel::where(['user_id'])->first();
+        $pre_info=UserModel::where(['user_id'=>$user_id])->first();
         $info_friend=[
             'friend_id'=>$user_id,
             'friend_name'=>$pre_info['user_name'],
