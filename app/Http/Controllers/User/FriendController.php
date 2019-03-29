@@ -19,6 +19,13 @@ class FriendController extends Controller
             'friend_name'=>$user_name,
             'friend_account'=>$friend_account,
         ];
+        $pre_info=UserModel::where(['user_id'])->first();
+        $info_friend=[
+            'friend_id'=>$user_id,
+            'friend_name'=>$pre_info['user_name'],
+            'friend_account'=>$pre_info['user_tel'],
+        ];
+        $res_pre=FriendModel::insert($info_friend);//好友列表添加
         $res_friend=FriendModel::insert($data_friend);//好友列表添加
         $data_user_friend=[
             'user_id'=>$user_id,
