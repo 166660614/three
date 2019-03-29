@@ -27,6 +27,7 @@ Route::post('/user/dot','User\DotController@dot');//点赞数据接口
 Route::post('/user/give','User\DotController@give');//点赞展示数据接口
 Route::post('/cart/join','Cart\CartController@cartJoin');//添加到购物车
 Route::post('/user/pwd','User\UserController@updatePwd');//修改密码
+Route::post('/user/pwd1','User\UserController@pwd1');   //修改密码
 
 
 Route::post('/collect/add','User\CollectController@collectAdd');//收藏商品数据接口
