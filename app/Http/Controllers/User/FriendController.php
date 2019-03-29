@@ -41,14 +41,7 @@ class FriendController extends Controller
     }
     public function addfriend(Request $request){
         $user_id=$_POST['user_id'];
-        $user_name=$_POST['user_name'];
-        $user_account=$_POST['user_account'];
-        $user_where=[
-            'user_id'=>$user_id,
-            'user_name'=>$user_name,
-            'user_account'=>$user_account
-        ];
-        $user_data=UserModel::where($user_where)->get();
+        $user_data=UserModel::where(['user_id'=>$user_id])->get();
         return $user_data;
     }
 }
