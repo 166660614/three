@@ -50,7 +50,7 @@ class FriendController extends Controller
             ];
             return $data;
         }
-        $user_data=UserModel::where(['user_id'=>$user_id])->get();
+        $user_data=UserModel::where(['user_id'=>$user_id])->first();
         if($user_data){
             $data=[
                 'errcode'=>0,
