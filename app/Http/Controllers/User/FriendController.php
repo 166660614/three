@@ -44,7 +44,20 @@ class FriendController extends Controller
     }
     public function addfriend(Request $request){
         $user_id=$_POST['user_id'];
-        $user_data=UserModel::where(['user_id'=>$user_id])->get();
-        return $user_data;
+        if(empty($user_id)){
+            $data=[
+                'errcode'=>4001,
+                'msg'=>'您还没登录'
+            ];
+            return $data;
+        }
+        $user_data=UserModel::where(['user_id'=>$user_id])->first();
+        if($user_data){
+            $data=[
+                'errcode'=>0,
+                'msg'=>$user_data,
+            ];
+            return $data;
+        }
     }
 }
