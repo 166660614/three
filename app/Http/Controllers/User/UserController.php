@@ -136,8 +136,8 @@ class UserController extends Controller{
             $userinfo=UserModel::where(['user_id'=>$user_id])->first();
             $uname=$userinfo['user_account'];
             $data=[
-                'errcode'=>0,
-                'uname'=>$uname
+                'errcode' => 0,
+                'uname'   => $uname
             ];
             return $data;
         }
