@@ -15,6 +15,7 @@ class FriendController extends Controller
         $user_name=$_POST['user_name'];
         $friend_account=$_POST['friend_account'];
         $data_friend=[
+            'friend_id'=>$friend_id,
             'friend_name'=>$user_name,
             'friend_account'=>$friend_account,
         ];
