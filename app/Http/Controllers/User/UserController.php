@@ -121,7 +121,7 @@ class UserController extends Controller{
                 'msg'=>'手机号不能为空'
             ];
             return $data;
-        }elseif(!is_numeric($utel) && strlen($utel)!=11){
+        }elseif(!is_numeric($utel) || strlen($utel)!=11){
             $data=[
                 'errcode'=>6001,
                 'msg'=>'手机号格式不符合'
