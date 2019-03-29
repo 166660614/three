@@ -155,18 +155,19 @@ class UserController extends Controller{
                 'errcode' => 50001,
                 'msg'     => '原密码错误'
             ]; 
-        }
-        if($pwd1!=$pwd2){
-            $data=[
-                'errcode' => 50001,
-                'msg'     => '确认密码需和密码一致'
-            ];
         }else{
-            UserModel::where(['user_id'=>$user_id])->update(['user_pwd'=>$pwd1]);
-            $data=[
-                'errcode'=>0,
-                'msg'=>'ok'
-            ];
+            if($pwd1!=$pwd2){
+                $data=[
+                    'errcode' => 50001,
+                    'msg'     => '确认密码需和密码一致'
+                ];
+            }else{
+                UserModel::where(['user_id'=>$user_id])->update(['user_pwd'=>$pwd1]);
+                $data=[
+                    'errcode'=>0,
+                    'msg'=>'ok'
+                ];
+            }
         }
         return $data;
     }
