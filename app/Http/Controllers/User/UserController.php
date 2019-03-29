@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Redis;
 use App\Model\UserModel;
 class UserController extends Controller{
     public function login(){
-        $user_account=trim($_POST['user_name']);
+        $user_account=$_POST['user_name'];
         $user_pwd=$_POST['user_pwd'];
         if(empty($user_account)){
             $res_data=[
@@ -62,7 +62,7 @@ class UserController extends Controller{
         return $res_data;
     }
     public function register(){
-        $uname=$_POST['uname'];
+        $uname=trim($_POST['uname']);
         if(empty($uname)){
             $data=[
                 'errcode'=>6001,
@@ -100,7 +100,7 @@ class UserController extends Controller{
             ];
             return $data;
         }
-        $uemail=$_POST['uemail'];
+        $uemail=trim($_POST['uemail']);
         if(empty($uemail)){
             $data=[
                 'errcode'=>6001,
@@ -114,7 +114,7 @@ class UserController extends Controller{
             ];
             return $data;
         }
-        $utel=$_POST['utel'];
+        $utel=trim($_POST['utel']);
         if(empty($utel)){
             $data=[
                 'errcode'=>6001,
