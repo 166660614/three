@@ -68,7 +68,7 @@ class GoodsController extends Controller
         if(!empty($user_id)){
             $salekey='people:user:'.$goods_id;
             Redis::zAdd($salekey,time(),$user_id);
-            $people=Redis::zRange($salekey,0,1);
+            $people=Redis::zRange($salekey,0,-1);
             //print_r($people);
             $arr=[];
             foreach ($people as $k=>$v){
@@ -82,10 +82,12 @@ class GoodsController extends Controller
                 }
                 $arr[]=$res;
             }
-            return  [
+            $data=[
                 'error'=>0,
                 'msg'=>$arr
             ];
+            return  $data;
+
         }
     }
 }
