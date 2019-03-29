@@ -23,14 +23,14 @@ class UserController extends Controller{
             ];
             return $res_data;
         }
-        if(is_numeric($user_account) && substr($user_account)==11){
+        if(is_numeric($user_account) || substr($user_account)==11){
             $user_where=[
                 'user_tel'=>$user_account,
                 'user_pwd'=>$user_pwd
             ];
         }elseif(substr_count($user_account,'@')!=0){
             $user_where=[
-                'user_tel'=>$user_account,
+                'user_email'=>$user_account,
                 'user_pwd'=>$user_pwd
             ];
         }else{
