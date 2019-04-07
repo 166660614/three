@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::post('/apilogin','Test\TestController@index');
 Route::post('/goods/list','Goods\GoodsController@goods');   //商品数据接口
 Route::post('/goods/details','Goods\GoodsController@details');   //商品详情数据接口
 Route::post('/goods/salenum','Goods\GoodsController@salevalue');   //添加访问量数据接口
@@ -43,3 +43,13 @@ Route::post('/end/list','User\DotController@end');
 Route::post('/friend/add','User\FriendController@friendAdd');//添加好友接口
 
 Route::post('/user/friends','User\FriendController@addfriend');//好友数据接口
+
+
+
+
+
+Route::get('/apply','Id\IdCard@apply');
+Route::post('/apply/do','Id\IdCard@applyDo');
+Route::get('/admin/apply','Id\IdCard@admin');
+Route::get('/apply/pass/{apply_id}','Id\IdCard@pass');
+Route::get('/apply/refuse/{apply_id}','Id\IdCard@refuse');
